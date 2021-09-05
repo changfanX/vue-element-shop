@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -9,7 +9,7 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-  #app {
-    background-color: #5dbe8a;
-  }
+#app {
+  background-color: #5dbe8a;
+}
 </style>
