@@ -1,10 +1,64 @@
 import Vue from 'vue'
-import { Form, FormItem, Input, Button, Message, Container, Header, Aside, Main, RadioGroup, RadioButton, Menu, Submenu, MenuItem } from 'element-ui'
+import {
+  MessageBox,
+  Message,
+  Form,
+  FormItem,
+  Input,
+  Button,
+  Container,
+  Header,
+  Aside,
+  Main,
+  RadioGroup,
+  RadioButton,
+  Menu,
+  Submenu,
+  MenuItem,
+  Breadcrumb,
+  BreadcrumbItem,
+  Table,
+  TableColumn,
+  Row,
+  Col,
+  Switch,
+  Tooltip,
+  Pagination,
+  Dialog,
+  Select,
+  Option
+} from 'element-ui'
 
-const element = [Form, FormItem, Input, Button, Container, Header, Aside, Main, RadioGroup, RadioButton, Menu, Submenu, MenuItem]
+Vue.prototype.$message = Message
+Vue.prototype.$confirm = MessageBox.confirm
+const element = [
+  Form,
+  FormItem,
+  Input,
+  Button,
+  Container,
+  Header,
+  Aside,
+  Main,
+  RadioGroup,
+  RadioButton,
+  Menu,
+  Submenu,
+  MenuItem,
+  Breadcrumb,
+  BreadcrumbItem,
+  Table,
+  TableColumn,
+  Row,
+  Col,
+  Switch,
+  Tooltip,
+  Pagination,
+  Dialog,
+  Select,
+  Option
+]
 
 for (const item of element) {
   Vue.use(item)
 }
-
-Vue.prototype.$message = Message

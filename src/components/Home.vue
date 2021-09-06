@@ -9,14 +9,29 @@
     </el-header>
     <el-container>
       <el-aside :width="isCollapse ? '64px' : '200px'">
-        <div class="toggle-button" @click="toggleCollapse">|||</div>
-        <el-menu unique-opened router background-color="#333744" :collapse="isCollapse" text-color="#fff" active-text-color="#409eff" :collapse-transition="false" :default-active="activePage">
+        <div class="toggle-button" @click="toggleCollapse">
+          |||
+        </div>
+        <el-menu
+          unique-opened
+          router
+          background-color="#333744"
+          :collapse="isCollapse"
+          text-color="#fff"
+          active-text-color="#409eff"
+          :collapse-transition="false"
+          :default-active="activePage"
+        >
           <el-submenu :index="menu.id + ''" v-for="menu in menuList" :key="menu.id">
             <template slot="title">
               <i :class="iconsObj[menu.id]"></i>
               <span slot="title">{{ menu.authName }}</span>
             </template>
-            <el-menu-item :index="'/' + sunItem.path" v-for="sunItem in menu.children" :key="sunItem.id">
+            <el-menu-item
+              :index="'/' + sunItem.path"
+              v-for="sunItem in menu.children"
+              :key="sunItem.id"
+            >
               <i class="el-icon-menu"></i>
               <span>{{ sunItem.authName }}</span>
             </el-menu-item>
