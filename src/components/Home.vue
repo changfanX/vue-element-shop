@@ -3,12 +3,12 @@
     <el-header>
       <div>
         <img src="../assets/manager.jpg" alt="" />
-        <span>电商后台管理系统{{ isCollapse }}</span>
+        <span>电商后台管理系统</span>
       </div>
       <el-button type="info" @click="logout">退出</el-button>
     </el-header>
     <el-container>
-      <el-aside :width="isCollapse ? '61px' : '200px'">
+      <el-aside :width="isCollapse ? '64px' : '200px'">
         <div class="toggle-button" @click="toggleCollapse">|||</div>
         <el-menu unique-opened router background-color="#333744" :collapse="isCollapse" text-color="#fff" active-text-color="#409eff" :collapse-transition="false" :default-active="activePage">
           <el-submenu :index="menu.id + ''" v-for="menu in menuList" :key="menu.id">
@@ -16,7 +16,10 @@
               <i :class="iconsObj[menu.id]"></i>
               <span slot="title">{{ menu.authName }}</span>
             </template>
-            <el-menu-item :index="'/' + sunItem.path" v-for="sunItem in menu.children" :key="sunItem.id">{{ sunItem.authName }}</el-menu-item>
+            <el-menu-item :index="'/' + sunItem.path" v-for="sunItem in menu.children" :key="sunItem.id">
+              <i class="el-icon-menu"></i>
+              <span>{{ sunItem.authName }}</span>
+            </el-menu-item>
           </el-submenu>
         </el-menu>
       </el-aside>
@@ -32,7 +35,6 @@ export default {
     return {
       menuList: [],
       iconsObj: {
-        // 一级菜单的icon图标
         147: 'el-icon-magic-stick',
         125: 'iconfont icon-users',
         103: 'iconfont icon-tijikongjian',
@@ -94,9 +96,13 @@ export default {
 .el-main {
   background-color: #eaedf1;
 }
+.el-aside {
+  background-color: #333744;
+}
 .el-header {
   display: flex;
   justify-content: space-between;
+  background-color: #373d3f;
   align-items: center;
   padding-left: 0;
   color: #fff;
@@ -112,10 +118,13 @@ export default {
   }
 }
 span {
-  margin-left: 15px;
+  margin-left: 10px;
 }
 .el-menu-item {
   text-align: center;
+  span {
+    margin: 0px;
+  }
 }
 .toggle-button {
   background-color: #4a5064;
@@ -127,6 +136,7 @@ span {
   cursor: pointer;
 }
 .el-menu {
+  border: none;
   .el-icon-magic-stick {
     width: 16px !important;
     height: 16px;
