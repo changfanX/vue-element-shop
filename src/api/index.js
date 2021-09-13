@@ -22,7 +22,7 @@ function addUserApi(payload = {}) {
   return axios.post('/users', payload)
 }
 function userStateChangeApi(payload) {
-  return axios.put(`users/${payload.id}/state/${payload.mg_state}`)
+  return axios.put(`/users/${payload.id}/state/${payload.mg_state}`)
 }
 function editUserInfoApi(payload) {
   const { id, email, mobile } = payload
@@ -34,11 +34,11 @@ function editUserInfoApi(payload) {
 function removeUserByIdApi(id) {
   return axios.delete('/users/' + id)
 }
-function setRolesApi(payload) {
-  return axios.get('roles')
+function setRolesApi() {
+  return axios.get('/roles')
 }
 function saveRolesInfoApi(id, payload) {
-  return axios.put(`users/${id}/role`, {
+  return axios.put(`/users/${id}/role`, {
     rid: payload
   })
 }
@@ -52,5 +52,6 @@ export default {
   editUserInfoApi,
   removeUserByIdApi,
   setRolesApi,
-  saveRolesInfoApi
+  saveRolesInfoApi,
+  axios
 }

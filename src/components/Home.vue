@@ -82,7 +82,6 @@ export default {
   },
   created() {
     this.getMenuList()
-    console.log(this.$route)
   },
   methods: {
     logout() {
@@ -98,7 +97,6 @@ export default {
       this.$message.success(res.meta.msg)
       res.data.unshift(this.welcome)
       this.menuList = res.data
-      console.log('menus:  ', res)
     }
   }
 }

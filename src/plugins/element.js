@@ -26,7 +26,10 @@ import {
   Pagination,
   Dialog,
   Select,
-  Option
+  Option,
+  Card,
+  Tag,
+  Tree
 } from 'element-ui'
 
 Vue.prototype.$message = Message
@@ -56,7 +59,10 @@ const element = [
   Pagination,
   Dialog,
   Select,
-  Option
+  Option,
+  Card,
+  Tag,
+  Tree
 ]
 
 for (const item of element) {
