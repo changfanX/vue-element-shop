@@ -29,7 +29,16 @@ import {
   Option,
   Card,
   Tag,
-  Tree
+  Tree,
+  Alert,
+  Steps,
+  Step,
+  Tabs,
+  TabPane,
+  Cascader,
+  CheckboxGroup,
+  Checkbox,
+  Upload
 } from 'element-ui'
 
 Vue.prototype.$message = Message
@@ -62,7 +71,16 @@ const element = [
   Option,
   Card,
   Tag,
-  Tree
+  Tree,
+  Alert,
+  Steps,
+  Step,
+  Tabs,
+  TabPane,
+  Cascader,
+  CheckboxGroup,
+  Checkbox,
+  Upload
 ]
 
 for (const item of element) {

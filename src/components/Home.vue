@@ -77,7 +77,8 @@ export default {
   },
   computed: {
     activePage() {
-      return this.$route.path
+      const path = this.$route.path.match(/^(\/.*)\//)?.[1]
+      return path || this.$route.path
     }
   },
   created() {
